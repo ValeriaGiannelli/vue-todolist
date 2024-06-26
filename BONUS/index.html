@@ -23,7 +23,7 @@
             <h1>Lista della spesa</h1>
 
             <!-- input per nuovo elemento -->
-            <input type="text" v-model="userInput">
+            <input type="text" v-model="userInput" @keyup.enter="addItem">
 
             <!-- bottone che aggiunge elemento alla lista -->
             <button @click="addItem">Aggiungi</button>
