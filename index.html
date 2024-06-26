@@ -23,16 +23,16 @@
             <h1>Lista della spesa</h1>
 
             <!-- input per nuovo elemento -->
-            <input type="text">
+            <input type="text" v-model="userInput">
 
             <!-- bottone che aggiunge elemento alla lista -->
-            <button>Aggiungi</button>
+            <button @click="addItem">Aggiungi</button>
 
             <!-- lista non rodinata -->
             <ul id="my_list">
                 <!-- qui andranno i contenuti dell'array in Vue -->
                 <li class="item_list" :class="{done : toDo.done === true}" v-for="(toDo, index) in toDoList" :key="index">
-                    
+
                     <!-- cosa c'è da fare -->
                     <p>{{toDo.text}}</p>
 

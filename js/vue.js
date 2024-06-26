@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp ({
     data(){
         return {
+            userInput: '',
             toDoList : [
                 {
                     text: 'fare spesa',
@@ -26,14 +27,29 @@ createApp ({
                     text: 'vedersi con Pippo',
                     done: false,
                 }
-            ]
+            ],
+            newItem : {
+                text: '',
+                done: false,
+            }
         }
     },
     methods: {
         // togliere l'item dalla lista
         cancelItem(indice){
             this.toDoList.splice(indice, 1);
+        },
+
+        // aggiungo l'elemento
+        addItem(){
+            // alla proprietà dell'elemento assegna il valore che ha scritto la persona
+            this.newItem['text'] = this.userInput;
+            // inserisci poi nella lista questo nuovo oggetto
+            this.toDoList.unshift(this.newItem);
+            // imposta il campo di input a vuoto
+            this.userInput = ''
         }
+
     }
 
 }).mount("#container");
