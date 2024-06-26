@@ -39,13 +39,18 @@
     justify-content: space-between;
 }
 
+
 /* padding per le icone inserite */
 #my_list li i{
     padding-right: 5px;
 }
 
+/* pointer */
+#my_list li i:hover, #my_list li p:hover{
+    cursor: pointer;
+}
 
-/* classe da aggiungere al click */
+/* classe da aggiungere se valore proprietà true */
 .done{
     color: gray;
     text-decoration-line: line-through;

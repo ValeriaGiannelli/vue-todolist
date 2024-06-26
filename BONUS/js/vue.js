@@ -48,6 +48,16 @@ createApp ({
             this.toDoList.unshift(this.newItem);
             // imposta il campo di input a vuoto
             this.userInput = ''
+        },
+
+        changeClass(indiceElemento){
+            // console.log(this.toDoList[indiceElemento].done);
+            // se la classe che ha l'elemento è true metti false, altrimenti viceversa
+            if(this.toDoList[indiceElemento].done === false){
+                this.toDoList[indiceElemento].done = true;
+            } else if(this.toDoList[indiceElemento].done === true){
+                this.toDoList[indiceElemento].done = false;
+            } 
         }
 
     }

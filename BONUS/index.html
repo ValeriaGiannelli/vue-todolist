@@ -31,10 +31,10 @@
             <!-- lista non rodinata -->
             <ul id="my_list">
                 <!-- qui andranno i contenuti dell'array in Vue -->
-                <li class="item_list" :class="{done : toDo.done === true}" v-for="(toDo, index) in toDoList" :key="index">
+                <li class="item_list"  v-for="(toDo, index) in toDoList" :key="index">
 
                     <!-- cosa c'è da fare -->
-                    <p>{{toDo.text}}</p>
+                    <p :class="{done : toDo.done === true}" @click="changeClass(index)">{{toDo.text}}</p>
 
                     <!-- icona per cancellarlo -->
                     <i class="fa-solid fa-xmark" @click="cancelItem(index)"></i>
