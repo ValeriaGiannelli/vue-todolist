@@ -29,5 +29,11 @@ createApp ({
             ]
         }
     },
+    methods: {
+        // togliere l'item dalla lista
+        cancelItem(indice){
+            this.toDoList.splice(indice, 1);
+        }
+    }
 
 }).mount("#container");
