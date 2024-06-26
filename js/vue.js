@@ -43,9 +43,15 @@ createApp ({
         // aggiungo l'elemento
         addItem(){
             // alla proprietà dell'elemento assegna il valore che ha scritto la persona
-            this.newItem['text'] = this.userInput;
-            // inserisci poi nella lista questo nuovo oggetto
-            this.toDoList.unshift(this.newItem);
+            if(this.userInput !== ''){
+                this.newItem['text'] = this.userInput;
+                // trasformo il mio proxy in un obj
+                const copyObj = {...this.newItem};
+                console.log(copyObj);
+                // inserisci poi nella lista questo nuovo oggetto
+                this.toDoList.unshift(copyObj);
+            }
+            
             // imposta il campo di input a vuoto
             this.userInput = ''
         }
