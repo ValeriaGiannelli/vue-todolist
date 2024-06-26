@@ -34,6 +34,9 @@
 #my_list li{
     border-bottom: 2px solid brown;
     padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* padding per le icone inserite */
