@@ -31,7 +31,7 @@
             <!-- lista non rodinata -->
             <ul id="my_list">
                 <!-- qui andranno i contenuti di JS -->
-                <li class="item_list" v-for="toDo in toDoList">
+                <li class="item_list" :class="{done : toDo.done === true}" v-for="toDo in toDoList">
                     <i class="fa-regular fa-square"></i>{{toDo.text}}
                 </li>
             </ul>
