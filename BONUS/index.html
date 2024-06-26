@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista della spesa Vue BONUS</title>
+    <title>To do List Vue BONUS</title>
 
     <!-- link a Vue 3.x -->
     <script src="https://unpkg.com/vue@3"></script>
@@ -20,7 +20,7 @@
         <!-- foglio della lista -->
         <div class="card_list">
             <!-- titolo -->
-            <h1>Lista della spesa</h1>
+            <h1>To Do List</h1>
 
             <!-- input per nuovo elemento -->
             <input type="text" v-model="userInput" @keyup.enter="addItem">
@@ -34,7 +34,10 @@
                 <li class="item_list"  v-for="(toDo, index) in toDoList" :key="index">
 
                     <!-- cosa c'è da fare -->
-                    <p :class="{done : toDo.done === true}" @click="changeClass(index)">{{toDo.text}}</p>
+                    <p :class="{done : toDo.done === true}" @click="changeClass(index)">
+                        <i class="fa-solid fa-square-xmark" v-if="toDo.done"></i>
+                        <i class="fa-regular fa-square" v-else></i>
+                        {{toDo.text}}</p>
 
                     <!-- icona per cancellarlo -->
                     <i class="fa-solid fa-xmark" @click="cancelItem(index)"></i>
